@@ -49,9 +49,9 @@ extension ViewController: StompClientDelegate {
         print()
     }
     
-    func stompClientDidConnect(client: StompClient!, id: String?) {
+    func stompClientDidConnect(client: StompClient!) {
         print()
-        client.subcribe(destination: "/user/user/topic/public", withHeader: header)
+        client.subcribe(destination: "/user/mu/topic/public", withHeader: header)
 //        client.subcribe(destination: "/topic/public/user", withHeader: header)
     }
     

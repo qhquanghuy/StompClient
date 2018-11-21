@@ -53,7 +53,7 @@ public protocol StompClientDelegate {
     func stompClient(client: StompClient!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, withHeader header:[String:String]?, withDestination destination: String)
     
     func stompClientDidDisconnect(client: StompClient!)
-    func stompClientDidConnect(client: StompClient!, id: String?)
+    func stompClientDidConnect(client: StompClient!)
     func serverDidSendReceipt(client: StompClient!, withReceiptId receiptId: String)
     func serverDidSendError(client: StompClient!, withErrorMessage description: String, detailedErrorMessage message: String?)
     func serverDidSendPing()
@@ -67,6 +67,15 @@ public class StompClient: NSObject, WebSocketDelegate {
     var userId: String?
     var delegate: StompClientDelegate?
     var connectionHeaders: [String: String]?
+    
+    
+    var randomString: String {
+        var str = "adklsfjeioqueiojlad,.znxcmv,noieuwrdalsfj"
+        str.shuffled()
+        
+        return str
+    }
+    
     public var connection: Bool = false
     public var certificateCheckEnabled = true
     private var urlRequest: URLRequest?
@@ -214,7 +223,7 @@ public class StompClient: NSObject, WebSocketDelegate {
            
             if let delegate = delegate {
                 DispatchQueue.main.async(execute: {
-                    delegate.stompClientDidConnect(client: self, id: self.userId)
+                    delegate.stompClientDidConnect(client: self)
                 })
             }
         } else if command == StompCommands.responseFrameMessage {   // Message comes to this part
@@ -297,10 +306,8 @@ public class StompClient: NSObject, WebSocketDelegate {
         switch ackMode {
         case StompAckMode.clientMode:
             ack = StompCommands.ackClient
-            break
         default:
             ack = StompCommands.ackAuto
-            break
         }
         var headers = [StompCommands.commandHeaderDestination: destination, StompCommands.commandHeaderAck: ack, StompCommands.commandHeaderDestinationId: ""]
         if destination != "" {
@@ -312,6 +319,9 @@ public class StompClient: NSObject, WebSocketDelegate {
     public func subcribe(destination: String, withHeader header: [String: String]) {
         var headerToSend = header
         headerToSend[StompCommands.commandHeaderDestination] = destination
+        if headerToSend[StompCommands.commandHeaderDestinationId] == nil {
+            headerToSend[StompCommands.commandHeaderDestinationId] = "sub-\(self.randomString)"
+        }
         sendFrame(command: StompCommands.commandSubscribe, header: headerToSend, body: nil)
     }
     
@@ -442,12 +452,7 @@ public class StompClient: NSObject, WebSocketDelegate {
     }
     
     public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        String(data: data, encoding: .utf8).map {
-            self.processString(string: $0)
-            DispatchQueue.main.async(execute: { [weak self] in
-                self?.delegate?.stompClientDidDisconnect(client: self)
-            })
-        }
+        String(data: data, encoding: .utf8).map(self.processString)
     }
     
     private func processString(string: String) {
