@@ -50,7 +50,7 @@ public enum StompAckMode {
 // Fundamental Protocols
 public protocol StompClientDelegate {
     func stompClientDidOpenSocket(client: StompClient!)
-    func stompClient(client: StompClient!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, withHeader header:[String:String]?, withDestination destination: String)
+    func stompClient(client: StompClient!, didReceiveMessageWithJSONBody jsonBody: String?, withHeader header:[String:String]?, withDestination destination: String)
     
     func stompClientDidDisconnect(client: StompClient!)
     func stompClientDidConnect(client: StompClient!, id: String?)
@@ -188,19 +188,6 @@ public class StompClient: NSObject, WebSocketDelegate {
         return ""
     }
     
-    private func dictForJSONString(jsonStr: String?) -> AnyObject? {
-        if let jsonStr = jsonStr {
-            do {
-                if let data = jsonStr.data(using: String.Encoding.utf8) {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                    return json as AnyObject
-                }
-            } catch {
-                print("error serializing JSON: \(error)")
-            }
-        }
-        return nil
-    }
     
     private func receiveFrame(command: String, headers: [String: String], body: String?) {
         if command == StompCommands.responseFrameConnected {
@@ -219,7 +206,7 @@ public class StompClient: NSObject, WebSocketDelegate {
             // Response
             if let delegate = delegate {
                 DispatchQueue.main.async(execute: {
-                    delegate.stompClient(client: self, didReceiveMessageWithJSONBody: self.dictForJSONString(jsonStr: body), withHeader: headers, withDestination: self.destinationFromHeader(header: headers))
+                    delegate.stompClient(client: self, didReceiveMessageWithJSONBody: body, withHeader: headers, withDestination: self.destinationFromHeader(header: headers))
                 })
             }
         } else if command == StompCommands.responseFrameReceipt {   //
