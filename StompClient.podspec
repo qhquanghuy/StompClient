@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'StompClient/Classes/**/*'
-  s.swift_version = '4.2.1'
+  s.swift_version = '4.2'
   # s.resource_bundles = {
   #   'StompClient' => ['StompClient/Assets/*.png']
   # }
