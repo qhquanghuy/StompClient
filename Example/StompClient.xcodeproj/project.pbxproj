@@ -39,14 +39,14 @@
 		607FACE51AFB9204008FA782 /* StompClient_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StompClient_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		62127DA91642E240130D8592 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		62127DA91642E240130D8592 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		7A1E8EFF27CC0B1E42AAD299 /* Pods-StompClient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StompClient_Example.debug.xcconfig"; path = "Target Support Files/Pods-StompClient_Example/Pods-StompClient_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8A52C8267390E06B638FD625 /* StompClient.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = StompClient.podspec; path = ../StompClient.podspec; sourceTree = "<group>"; };
+		8A52C8267390E06B638FD625 /* StompClient.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = StompClient.podspec; path = ../StompClient.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8A91F399B698C49219049D6C /* Pods_StompClient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StompClient_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96514C6986568ED6FA30C075 /* Pods-StompClient_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StompClient_Tests.debug.xcconfig"; path = "Target Support Files/Pods-StompClient_Tests/Pods-StompClient_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C2E42E9FB0E2D382D2843EE3 /* Pods-StompClient_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StompClient_Tests.release.xcconfig"; path = "Target Support Files/Pods-StompClient_Tests/Pods-StompClient_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E240C07A9DD8DAC263F93EAB /* Pods_StompClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StompClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E740838783254FE55F4EF5B0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E740838783254FE55F4EF5B0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,6 @@
 				96514C6986568ED6FA30C075 /* Pods-StompClient_Tests.debug.xcconfig */,
 				C2E42E9FB0E2D382D2843EE3 /* Pods-StompClient_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -315,12 +314,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StompClient_Example/Pods-StompClient_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/StompClient/StompClient.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StompClient.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StompClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -498,6 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StompClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

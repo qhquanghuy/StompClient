@@ -1,0 +1,23 @@
+PODS:
+  - Starscream (3.0.6)
+  - StompClient (0.1.0):
+    - Starscream (~> 3.0.2)
+
+DEPENDENCIES:
+  - StompClient (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Starscream
+
+EXTERNAL SOURCES:
+  StompClient:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  StompClient: 3e3111aa143450acdb48516aa947530e3d1eb798
+
+PODFILE CHECKSUM: 4b73c97c542cebddf52526317b46b62ad4674d05
+
+COCOAPODS: 1.6.0.beta.2

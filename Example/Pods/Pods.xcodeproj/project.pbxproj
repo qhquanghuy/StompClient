@@ -1,0 +1,982 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		004E26C121A53A97007CEF6A /* StompClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89223165B4F8575C9CBAD4A1C964446 /* StompClient.swift */; };
+		0D9B56FF79E8B6A13A050D939A3C6F8D /* StompClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30752162AB31B10320A95791D001786E /* StompClient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		203995A9589A57DAC2515BC78593226E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276140B1EDA081793CA6BDD7582E1B4B /* Foundation.framework */; };
+		3B9B396518D9ECF5299A301F204A67BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276140B1EDA081793CA6BDD7582E1B4B /* Foundation.framework */; };
+		3EE19F8F801CFBDC027125D571A2FD7D /* StompClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6353F73000C7D34F1F061E60C3DB835A /* StompClient-dummy.m */; };
+		605495C4612CCCA87FF2458319B421C8 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F52249DD4D3DD3159B64A42F2E7349B /* Starscream.framework */; };
+		6A84887701D087F09F92C98BEB72D01F /* Pods-StompClient_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D947CC583C7278E583B2CBDF7702796 /* Pods-StompClient_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7426D082141EB95A5A25448B0490449E /* StompClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89223165B4F8575C9CBAD4A1C964446 /* StompClient.swift */; };
+		74E2851D158CFA3080A62A0AABF44789 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2D893CE1E35390EBDB9BF55C3F896 /* Starscream-dummy.m */; };
+		7CA2D66BF2AFB6BF996D5D21CBBB06EC /* Pods-StompClient_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C9025A5703123FDD2E62155A1AC68A8 /* Pods-StompClient_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85BA5291B72E2A3582D359886AC0FF73 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF667E69ACDB807B282E380354DB273 /* WebSocket.swift */; };
+		86B56BE037845BD5A3B360C97FF2F80F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276140B1EDA081793CA6BDD7582E1B4B /* Foundation.framework */; };
+		927D645B73776540BC1B4A31ED2466FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276140B1EDA081793CA6BDD7582E1B4B /* Foundation.framework */; };
+		AF4D274A5CD696049CB39C47AC354318 /* SSLClientCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722B7A5196E76DAE17188C05D685DF4C /* SSLClientCertificate.swift */; };
+		D3055B61308413EEC231A93AB746E62A /* Pods-StompClient_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D4777ECD15C145CEC59854927B979B /* Pods-StompClient_Tests-dummy.m */; };
+		DE5694C6CDCCC6B2E9AB9B2DC2956EAA /* Pods-StompClient_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 914DEF5A91116FF25D14ED9FEDE48717 /* Pods-StompClient_Example-dummy.m */; };
+		ED42A14B9D8CED5FBF4BF2D9FD20CD42 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F18693C1114E37BBFBEC8EE8686FDC /* Compression.swift */; };
+		F2995CDDF1DBBEBAEA224174A35C1E6A /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B9EB49B9CB293E8FE3B68711FEC263 /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9AB74E6FFA2182AD5A3C0D8C273FED9 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805889F6E182005B68A4EDCFEF2FAF7D /* SSLSecurity.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		163419106023F8441921D6BA2107ADDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8444C6A5769152718ECBC799DD12CF83;
+			remoteInfo = StompClient;
+		};
+		906EEEF70AD09F23ACE5AEB4BD0C34A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E2A44F57996FDC8E7F0F721B1857086;
+			remoteInfo = "Pods-StompClient_Example";
+		};
+		C7D98BA7860251B3ACBC820E32F8086E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41407EB969D16B83C13CD1F4C37497F9;
+			remoteInfo = Starscream;
+		};
+		CB294B254487EB4530168CE7E29E6735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41407EB969D16B83C13CD1F4C37497F9;
+			remoteInfo = Starscream;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C48D9B272748D54564F81B0B676809B /* Pods-StompClient_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StompClient_Tests.modulemap"; sourceTree = "<group>"; };
+		0F52249DD4D3DD3159B64A42F2E7349B /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E77FB1A587F61C33433BEF7668FB34 /* Pods_StompClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StompClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17B9EB49B9CB293E8FE3B68711FEC263 /* Starscream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-umbrella.h"; sourceTree = "<group>"; };
+		1B03CC4428C09BF7E0511747A042804E /* Starscream.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.xcconfig; sourceTree = "<group>"; };
+		1DF663C340C1DBBC7DFC16F0F8FFD073 /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
+		237CF61FEED00B7144F569629B3DAE7E /* StompClient-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StompClient-Info.plist"; sourceTree = "<group>"; };
+		2750AA4DEC91260F1F543190FE79F7F3 /* Pods-StompClient_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StompClient_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		276140B1EDA081793CA6BDD7582E1B4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2E6BA5D97BD9A3161FB0E00C55351668 /* Pods-StompClient_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StompClient_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2E9F17893AF9F9A19BA462BEF3CCF55D /* Pods-StompClient_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StompClient_Example.release.xcconfig"; sourceTree = "<group>"; };
+		305445BEE48B9BF5F97B8236D47A7E71 /* Pods-StompClient_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StompClient_Tests-Info.plist"; sourceTree = "<group>"; };
+		30752162AB31B10320A95791D001786E /* StompClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StompClient-umbrella.h"; sourceTree = "<group>"; };
+		47E53BD74241F3A9C9CB46230FDC251F /* Pods-StompClient_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StompClient_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4AC0B45F9C1ADDF12713E123CF494236 /* Pods-StompClient_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StompClient_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4DFF06468EFA110615C7F1B53B402597 /* StompClient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StompClient.xcconfig; sourceTree = "<group>"; };
+		5C9025A5703123FDD2E62155A1AC68A8 /* Pods-StompClient_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StompClient_Example-umbrella.h"; sourceTree = "<group>"; };
+		60F33EA701D5CCA4C73813AA09A28670 /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Starscream.modulemap; sourceTree = "<group>"; };
+		6353F73000C7D34F1F061E60C3DB835A /* StompClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StompClient-dummy.m"; sourceTree = "<group>"; };
+		67AB90E8CCF6E64B5BC159025CB25C5A /* Pods-StompClient_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StompClient_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		68D79DD908D4315CD0252679C5CC2ECB /* Pods_StompClient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StompClient_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DBB9F4F75F5F0B4742B6CCE85794E83 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		722B7A5196E76DAE17188C05D685DF4C /* SSLClientCertificate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLClientCertificate.swift; path = Sources/Starscream/SSLClientCertificate.swift; sourceTree = "<group>"; };
+		805889F6E182005B68A4EDCFEF2FAF7D /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Sources/Starscream/SSLSecurity.swift; sourceTree = "<group>"; };
+		8D947CC583C7278E583B2CBDF7702796 /* Pods-StompClient_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StompClient_Tests-umbrella.h"; sourceTree = "<group>"; };
+		8DF053F81F07924A8C4B885B3DC0FF99 /* StompClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StompClient-prefix.pch"; sourceTree = "<group>"; };
+		914DEF5A91116FF25D14ED9FEDE48717 /* Pods-StompClient_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StompClient_Example-dummy.m"; sourceTree = "<group>"; };
+		9FA2D893CE1E35390EBDB9BF55C3F896 /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
+		A3D4777ECD15C145CEC59854927B979B /* Pods-StompClient_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StompClient_Tests-dummy.m"; sourceTree = "<group>"; };
+		A9F18693C1114E37BBFBEC8EE8686FDC /* Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Sources/Starscream/Compression.swift; sourceTree = "<group>"; };
+		AEF667E69ACDB807B282E380354DB273 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Sources/Starscream/WebSocket.swift; sourceTree = "<group>"; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BD38E1951DB253EA24CC44FB7C6F7D6C /* StompClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StompClient.modulemap; sourceTree = "<group>"; };
+		C1000D4705536E81CC6AC8A2DE7A0A72 /* Pods-StompClient_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StompClient_Example.modulemap"; sourceTree = "<group>"; };
+		CD3BE4F4A6B25ED6AA2376D8773FCF98 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E0232396A79D9AF7843D7153BAFC6831 /* StompClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StompClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E170060B23A5598A11C4231D863D768C /* Pods-StompClient_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StompClient_Example-Info.plist"; sourceTree = "<group>"; };
+		E31549D832FDB4FF9B5C1C9E3395E8F6 /* Pods-StompClient_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StompClient_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		E4259B7D462ACD0A3DAC50F8C2595F10 /* StompClient.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = StompClient.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E89223165B4F8575C9CBAD4A1C964446 /* StompClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StompClient.swift; path = StompClient/Classes/StompClient.swift; sourceTree = "<group>"; };
+		EA64EABBAD014A9727F25610D12ACCA4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F2683D7415ADCF3F33FA0B0105EFF583 /* Starscream-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Starscream-Info.plist"; sourceTree = "<group>"; };
+		F32007A98CB41128479C15D04BC655AA /* Pods-StompClient_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StompClient_Example-frameworks.sh"; sourceTree = "<group>"; };
+		FCF3DC31473A39CCA95C1CDFF26BD1EB /* Pods-StompClient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StompClient_Example.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0354E58CD09F2355F5F63CFF0ABBE393 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				927D645B73776540BC1B4A31ED2466FD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A84C0AE9377A4AB12E5D49A7FA85A37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B9B396518D9ECF5299A301F204A67BE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A34BF02FE6C67526D046B6D8623F35C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				203995A9589A57DAC2515BC78593226E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90B9AAA3112BC7D6F6C1E85115AAA63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86B56BE037845BD5A3B360C97FF2F80F /* Foundation.framework in Frameworks */,
+				605495C4612CCCA87FF2458319B421C8 /* Starscream.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12713C0E04A065748494E1A30294B4A3 /* Starscream */ = {
+			isa = PBXGroup;
+			children = (
+				A9F18693C1114E37BBFBEC8EE8686FDC /* Compression.swift */,
+				722B7A5196E76DAE17188C05D685DF4C /* SSLClientCertificate.swift */,
+				805889F6E182005B68A4EDCFEF2FAF7D /* SSLSecurity.swift */,
+				AEF667E69ACDB807B282E380354DB273 /* WebSocket.swift */,
+				DCF603745C382EF0F93B5A559BF1EAAC /* Support Files */,
+			);
+			path = Starscream;
+			sourceTree = "<group>";
+		};
+		1C9B10A654BCF9BD93C14FE0346B9148 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				276140B1EDA081793CA6BDD7582E1B4B /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		64536E373B8296929C9E0AB437D7FD90 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B43ED6128F7A5EB22EC6BD645CE99685 /* StompClient */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		70C1CB60798DE947FC436F6278D99024 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				97D69767347BE1313F1702EE29FB7C12 /* Pods-StompClient_Example */,
+				780D70159A08BF3122979EDEFF4DF91B /* Pods-StompClient_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		780D70159A08BF3122979EDEFF4DF91B /* Pods-StompClient_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0C48D9B272748D54564F81B0B676809B /* Pods-StompClient_Tests.modulemap */,
+				67AB90E8CCF6E64B5BC159025CB25C5A /* Pods-StompClient_Tests-acknowledgements.markdown */,
+				47E53BD74241F3A9C9CB46230FDC251F /* Pods-StompClient_Tests-acknowledgements.plist */,
+				A3D4777ECD15C145CEC59854927B979B /* Pods-StompClient_Tests-dummy.m */,
+				305445BEE48B9BF5F97B8236D47A7E71 /* Pods-StompClient_Tests-Info.plist */,
+				8D947CC583C7278E583B2CBDF7702796 /* Pods-StompClient_Tests-umbrella.h */,
+				2E6BA5D97BD9A3161FB0E00C55351668 /* Pods-StompClient_Tests.debug.xcconfig */,
+				2750AA4DEC91260F1F543190FE79F7F3 /* Pods-StompClient_Tests.release.xcconfig */,
+			);
+			name = "Pods-StompClient_Tests";
+			path = "Target Support Files/Pods-StompClient_Tests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
+				64536E373B8296929C9E0AB437D7FD90 /* Development Pods */,
+				C6C6CF85326A60B112CC4A77BAD281D7 /* Frameworks */,
+				B2F54CB704E1800078ACC2EEBFF040C5 /* Pods */,
+				E6C65F09DA144D37A3B291B5B918F423 /* Products */,
+				70C1CB60798DE947FC436F6278D99024 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		97D69767347BE1313F1702EE29FB7C12 /* Pods-StompClient_Example */ = {
+			isa = PBXGroup;
+			children = (
+				C1000D4705536E81CC6AC8A2DE7A0A72 /* Pods-StompClient_Example.modulemap */,
+				4AC0B45F9C1ADDF12713E123CF494236 /* Pods-StompClient_Example-acknowledgements.markdown */,
+				E31549D832FDB4FF9B5C1C9E3395E8F6 /* Pods-StompClient_Example-acknowledgements.plist */,
+				914DEF5A91116FF25D14ED9FEDE48717 /* Pods-StompClient_Example-dummy.m */,
+				F32007A98CB41128479C15D04BC655AA /* Pods-StompClient_Example-frameworks.sh */,
+				E170060B23A5598A11C4231D863D768C /* Pods-StompClient_Example-Info.plist */,
+				5C9025A5703123FDD2E62155A1AC68A8 /* Pods-StompClient_Example-umbrella.h */,
+				FCF3DC31473A39CCA95C1CDFF26BD1EB /* Pods-StompClient_Example.debug.xcconfig */,
+				2E9F17893AF9F9A19BA462BEF3CCF55D /* Pods-StompClient_Example.release.xcconfig */,
+			);
+			name = "Pods-StompClient_Example";
+			path = "Target Support Files/Pods-StompClient_Example";
+			sourceTree = "<group>";
+		};
+		B2F54CB704E1800078ACC2EEBFF040C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12713C0E04A065748494E1A30294B4A3 /* Starscream */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B43ED6128F7A5EB22EC6BD645CE99685 /* StompClient */ = {
+			isa = PBXGroup;
+			children = (
+				E89223165B4F8575C9CBAD4A1C964446 /* StompClient.swift */,
+				F5761A922AA42F86D21888154D8F778B /* Pod */,
+				E8CBBD020A9D34E3189A0E5B07654504 /* Support Files */,
+			);
+			name = StompClient;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		C6C6CF85326A60B112CC4A77BAD281D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F52249DD4D3DD3159B64A42F2E7349B /* Starscream.framework */,
+				1C9B10A654BCF9BD93C14FE0346B9148 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCF603745C382EF0F93B5A559BF1EAAC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				60F33EA701D5CCA4C73813AA09A28670 /* Starscream.modulemap */,
+				1B03CC4428C09BF7E0511747A042804E /* Starscream.xcconfig */,
+				9FA2D893CE1E35390EBDB9BF55C3F896 /* Starscream-dummy.m */,
+				F2683D7415ADCF3F33FA0B0105EFF583 /* Starscream-Info.plist */,
+				1DF663C340C1DBBC7DFC16F0F8FFD073 /* Starscream-prefix.pch */,
+				17B9EB49B9CB293E8FE3B68711FEC263 /* Starscream-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Starscream";
+			sourceTree = "<group>";
+		};
+		E6C65F09DA144D37A3B291B5B918F423 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10E77FB1A587F61C33433BEF7668FB34 /* Pods_StompClient_Example.framework */,
+				68D79DD908D4315CD0252679C5CC2ECB /* Pods_StompClient_Tests.framework */,
+				6DBB9F4F75F5F0B4742B6CCE85794E83 /* Starscream.framework */,
+				E0232396A79D9AF7843D7153BAFC6831 /* StompClient.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8CBBD020A9D34E3189A0E5B07654504 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD38E1951DB253EA24CC44FB7C6F7D6C /* StompClient.modulemap */,
+				4DFF06468EFA110615C7F1B53B402597 /* StompClient.xcconfig */,
+				6353F73000C7D34F1F061E60C3DB835A /* StompClient-dummy.m */,
+				237CF61FEED00B7144F569629B3DAE7E /* StompClient-Info.plist */,
+				8DF053F81F07924A8C4B885B3DC0FF99 /* StompClient-prefix.pch */,
+				30752162AB31B10320A95791D001786E /* StompClient-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/StompClient";
+			sourceTree = "<group>";
+		};
+		F5761A922AA42F86D21888154D8F778B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BE4F4A6B25ED6AA2376D8773FCF98 /* LICENSE */,
+				EA64EABBAD014A9727F25610D12ACCA4 /* README.md */,
+				E4259B7D462ACD0A3DAC50F8C2595F10 /* StompClient.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		25559877DAC5DC319B35BA612139A6A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D9B56FF79E8B6A13A050D939A3C6F8D /* StompClient-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DDCE0EFED1201662F2F005C7DDECADA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2995CDDF1DBBEBAEA224174A35C1E6A /* Starscream-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE6E0CE21D563F8687ADC9305C929B3E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A84887701D087F09F92C98BEB72D01F /* Pods-StompClient_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8684457BA5C07EAC5BC5910D00A5D72 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA2D66BF2AFB6BF996D5D21CBBB06EC /* Pods-StompClient_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1E2A44F57996FDC8E7F0F721B1857086 /* Pods-StompClient_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3879CF8B8E7F7C07DC74904605C0EED5 /* Build configuration list for PBXNativeTarget "Pods-StompClient_Example" */;
+			buildPhases = (
+				C8684457BA5C07EAC5BC5910D00A5D72 /* Headers */,
+				BD20D1E3098AFD20AD2033E321BFB8E2 /* Sources */,
+				0354E58CD09F2355F5F63CFF0ABBE393 /* Frameworks */,
+				E7258F5572F9F1EFD4C3A2E4321D837C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AFCB6248D35793AEA01DA86EC4703D2 /* PBXTargetDependency */,
+				C4C8F33F9B1D0714AAC7E59537613E6F /* PBXTargetDependency */,
+			);
+			name = "Pods-StompClient_Example";
+			productName = "Pods-StompClient_Example";
+			productReference = 10E77FB1A587F61C33433BEF7668FB34 /* Pods_StompClient_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		41407EB969D16B83C13CD1F4C37497F9 /* Starscream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82A559A4B672577622BE019C661B710B /* Build configuration list for PBXNativeTarget "Starscream" */;
+			buildPhases = (
+				7DDCE0EFED1201662F2F005C7DDECADA /* Headers */,
+				BBF1CF26E80CB68DE30D0D5E295AA795 /* Sources */,
+				7A84C0AE9377A4AB12E5D49A7FA85A37 /* Frameworks */,
+				2DB6AD65C46674DA0F75FF1FED282BCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Starscream;
+			productName = Starscream;
+			productReference = 6DBB9F4F75F5F0B4742B6CCE85794E83 /* Starscream.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8444C6A5769152718ECBC799DD12CF83 /* StompClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D76F5AB2BED7C412BDEE70A3D3B7758 /* Build configuration list for PBXNativeTarget "StompClient" */;
+			buildPhases = (
+				25559877DAC5DC319B35BA612139A6A2 /* Headers */,
+				5113DA1801A8F63D168F3DE65AADEEB2 /* Sources */,
+				E90B9AAA3112BC7D6F6C1E85115AAA63 /* Frameworks */,
+				E1198E25976C6BED46B00F7CE9D2339D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF0CD8B8E3E0FD766417E690072F947E /* PBXTargetDependency */,
+			);
+			name = StompClient;
+			productName = StompClient;
+			productReference = E0232396A79D9AF7843D7153BAFC6831 /* StompClient.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BBCE78F228B24BC4728706412D753A9A /* Pods-StompClient_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B43B15ECF973E4920CCF0149878E372B /* Build configuration list for PBXNativeTarget "Pods-StompClient_Tests" */;
+			buildPhases = (
+				BE6E0CE21D563F8687ADC9305C929B3E /* Headers */,
+				3F8A69F3265A6C98D4F825C51EB2230F /* Sources */,
+				A34BF02FE6C67526D046B6D8623F35C7 /* Frameworks */,
+				C37B52CC22B095E7F15CEA8339CBEBED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD576FA7216985C73AD71152C8CEEB55 /* PBXTargetDependency */,
+			);
+			name = "Pods-StompClient_Tests";
+			productName = "Pods-StompClient_Tests";
+			productReference = 68D79DD908D4315CD0252679C5CC2ECB /* Pods_StompClient_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = E6C65F09DA144D37A3B291B5B918F423 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E2A44F57996FDC8E7F0F721B1857086 /* Pods-StompClient_Example */,
+				BBCE78F228B24BC4728706412D753A9A /* Pods-StompClient_Tests */,
+				41407EB969D16B83C13CD1F4C37497F9 /* Starscream */,
+				8444C6A5769152718ECBC799DD12CF83 /* StompClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DB6AD65C46674DA0F75FF1FED282BCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37B52CC22B095E7F15CEA8339CBEBED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1198E25976C6BED46B00F7CE9D2339D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7258F5572F9F1EFD4C3A2E4321D837C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F8A69F3265A6C98D4F825C51EB2230F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3055B61308413EEC231A93AB746E62A /* Pods-StompClient_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5113DA1801A8F63D168F3DE65AADEEB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7426D082141EB95A5A25448B0490449E /* StompClient.swift in Sources */,
+				3EE19F8F801CFBDC027125D571A2FD7D /* StompClient-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBF1CF26E80CB68DE30D0D5E295AA795 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED42A14B9D8CED5FBF4BF2D9FD20CD42 /* Compression.swift in Sources */,
+				AF4D274A5CD696049CB39C47AC354318 /* SSLClientCertificate.swift in Sources */,
+				F9AB74E6FFA2182AD5A3C0D8C273FED9 /* SSLSecurity.swift in Sources */,
+				74E2851D158CFA3080A62A0AABF44789 /* Starscream-dummy.m in Sources */,
+				85BA5291B72E2A3582D359886AC0FF73 /* WebSocket.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD20D1E3098AFD20AD2033E321BFB8E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				004E26C121A53A97007CEF6A /* StompClient.swift in Sources */,
+				DE5694C6CDCCC6B2E9AB9B2DC2956EAA /* Pods-StompClient_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AFCB6248D35793AEA01DA86EC4703D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Starscream;
+			target = 41407EB969D16B83C13CD1F4C37497F9 /* Starscream */;
+			targetProxy = C7D98BA7860251B3ACBC820E32F8086E /* PBXContainerItemProxy */;
+		};
+		AF0CD8B8E3E0FD766417E690072F947E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Starscream;
+			target = 41407EB969D16B83C13CD1F4C37497F9 /* Starscream */;
+			targetProxy = CB294B254487EB4530168CE7E29E6735 /* PBXContainerItemProxy */;
+		};
+		C4C8F33F9B1D0714AAC7E59537613E6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StompClient;
+			target = 8444C6A5769152718ECBC799DD12CF83 /* StompClient */;
+			targetProxy = 163419106023F8441921D6BA2107ADDA /* PBXContainerItemProxy */;
+		};
+		DD576FA7216985C73AD71152C8CEEB55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-StompClient_Example";
+			target = 1E2A44F57996FDC8E7F0F721B1857086 /* Pods-StompClient_Example */;
+			targetProxy = 906EEEF70AD09F23ACE5AEB4BD0C34A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		13D86F2D3E67D394581754DF402B2008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2750AA4DEC91260F1F543190FE79F7F3 /* Pods-StompClient_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StompClient_Tests/Pods-StompClient_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StompClient_Tests/Pods-StompClient_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		166C1611640292B63E9825F8E8F29878 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DFF06468EFA110615C7F1B53B402597 /* StompClient.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/StompClient/StompClient-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StompClient/StompClient-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/StompClient/StompClient.modulemap";
+				PRODUCT_MODULE_NAME = StompClient;
+				PRODUCT_NAME = StompClient;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		227E198C35A3E6CD26E44A8CD81C9F97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E9F17893AF9F9A19BA462BEF3CCF55D /* Pods-StompClient_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StompClient_Example/Pods-StompClient_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StompClient_Example/Pods-StompClient_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		43126EF4C00F86D110731A5615B29D31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCF3DC31473A39CCA95C1CDFF26BD1EB /* Pods-StompClient_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StompClient_Example/Pods-StompClient_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StompClient_Example/Pods-StompClient_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5153DC2E9BB4F6D6F85AF7C0A4A2A27F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6A949A208667F02694AF29D5DCC8D4BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		755F438A72CC8398989006028457CAE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B03CC4428C09BF7E0511747A042804E /* Starscream.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Starscream-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				PRODUCT_MODULE_NAME = Starscream;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9A8D65760E1E7B085B39D92080FC9193 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B03CC4428C09BF7E0511747A042804E /* Starscream.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Starscream-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				PRODUCT_MODULE_NAME = Starscream;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC0E1420D82F37885AFF9EA838478E54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E6BA5D97BD9A3161FB0E00C55351668 /* Pods-StompClient_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StompClient_Tests/Pods-StompClient_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StompClient_Tests/Pods-StompClient_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DA47B2356AB3AFFBC23410292FFEA364 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DFF06468EFA110615C7F1B53B402597 /* StompClient.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/StompClient/StompClient-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StompClient/StompClient-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/StompClient/StompClient.modulemap";
+				PRODUCT_MODULE_NAME = StompClient;
+				PRODUCT_NAME = StompClient;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5153DC2E9BB4F6D6F85AF7C0A4A2A27F /* Debug */,
+				6A949A208667F02694AF29D5DCC8D4BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3879CF8B8E7F7C07DC74904605C0EED5 /* Build configuration list for PBXNativeTarget "Pods-StompClient_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43126EF4C00F86D110731A5615B29D31 /* Debug */,
+				227E198C35A3E6CD26E44A8CD81C9F97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D76F5AB2BED7C412BDEE70A3D3B7758 /* Build configuration list for PBXNativeTarget "StompClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				166C1611640292B63E9825F8E8F29878 /* Debug */,
+				DA47B2356AB3AFFBC23410292FFEA364 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82A559A4B672577622BE019C661B710B /* Build configuration list for PBXNativeTarget "Starscream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755F438A72CC8398989006028457CAE8 /* Debug */,
+				9A8D65760E1E7B085B39D92080FC9193 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B43B15ECF973E4920CCF0149878E372B /* Build configuration list for PBXNativeTarget "Pods-StompClient_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0E1420D82F37885AFF9EA838478E54 /* Debug */,
+				13D86F2D3E67D394581754DF402B2008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

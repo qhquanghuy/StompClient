@@ -1,0 +1,27 @@
+{
+  "name": "StompClient",
+  "version": "0.1.0",
+  "summary": "A short description of StompClient.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/qhquanghuy96@gmail.com/StompClient",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "qhquanghuy96@gmail.com": "quanghuy.nguyen@savvycomsoftware.com"
+  },
+  "source": {
+    "git": "https://github.com/qhquanghuy96@gmail.com/StompClient.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "StompClient/Classes/**/*",
+  "dependencies": {
+    "Starscream": [
+      "~> 3.0.2"
+    ]
+  }
+}

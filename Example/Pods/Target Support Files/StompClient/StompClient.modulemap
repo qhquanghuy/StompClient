@@ -1,0 +1,6 @@
+framework module StompClient {
+  umbrella header "StompClient-umbrella.h"
+
+  export *
+  module * { export * }
+}
