@@ -68,14 +68,6 @@ public class StompClient: NSObject, WebSocketDelegate {
     var delegate: StompClientDelegate?
     var connectionHeaders: [String: String]?
     
-    
-    var randomString: String {
-        var str = "adklsfjeioqueiojlad,.znxcmv,noieuwrdalsfj"
-        str.shuffled()
-        
-        return str
-    }
-    
     public var connection: Bool = false
     public var certificateCheckEnabled = true
     private var urlRequest: URLRequest?
@@ -320,11 +312,12 @@ public class StompClient: NSObject, WebSocketDelegate {
         var headerToSend = header
         headerToSend[StompCommands.commandHeaderDestination] = destination
         if headerToSend[StompCommands.commandHeaderDestinationId] == nil {
-            headerToSend[StompCommands.commandHeaderDestinationId] = "sub-\(self.randomString)"
+            headerToSend[StompCommands.commandHeaderDestinationId] = "sub-\(destination)"
         }
         sendFrame(command: StompCommands.commandSubscribe, header: headerToSend, body: nil)
     }
     
+ 
     /*
      Main Unsubscribe Method with topic name
      */
