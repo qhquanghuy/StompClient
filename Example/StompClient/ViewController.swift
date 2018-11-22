@@ -37,13 +37,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: StompClientDelegate {
+    func stompClient(client: StompClient!, didReceiveMessageWithJSONBody jsonBody: String?, withHeader header: [String : String]?, withDestination destination: String) {
+        print(jsonBody)
+    }
+    
     func stompClientDidOpenSocket(client: StompClient!) {
         print()
     }
     
-    func stompClient(client: StompClient!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, withHeader header: [String : String]?, withDestination destination: String) {
-        print(jsonBody)
-    }
     
     func stompClientDidDisconnect(client: StompClient!) {
         print()

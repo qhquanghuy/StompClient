@@ -50,7 +50,7 @@ public enum StompAckMode {
 // Fundamental Protocols
 public protocol StompClientDelegate {
     func stompClientDidOpenSocket(client: StompClient!)
-    func stompClient(client: StompClient!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, withHeader header:[String:String]?, withDestination destination: String)
+    func stompClient(client: StompClient!, didReceiveMessageWithJSONBody jsonBody: String?, withHeader header:[String:String]?, withDestination destination: String)
     
     func stompClientDidDisconnect(client: StompClient!)
     func stompClientDidConnect(client: StompClient!)
@@ -67,34 +67,31 @@ public class StompClient: NSObject, WebSocketDelegate {
     var userId: String?
     var delegate: StompClientDelegate?
     var connectionHeaders: [String: String]?
-    
-    public var connection: Bool = false
+    public private(set) var status: ClientStatus = .disconnected
     public var certificateCheckEnabled = true
     private var urlRequest: URLRequest?
     
-    public func sendJSONForDict(dict: AnyObject, toDestination destination: String) {
+    public func send<T: Codable>(data: T, to destination: String) {
+        let encoder = JSONEncoder()
         do {
-            let theJSONData = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions())
-            let theJSONText = String(data: theJSONData, encoding: String.Encoding.utf8)
-            //print(theJSONText!)
+            let bytes = try encoder.encode(data)
+            let jsonString = String(data: bytes, encoding: .utf8)
+            
             let header = [StompCommands.commandHeaderContentType:"application/json;charset=UTF-8"]
-            sendMessage(message: theJSONText!, toDestination: destination, withHeaders: header, withReceipt: nil)
+            sendMessage(message: jsonString!, toDestination: destination, withHeaders: header, withReceipt: nil)
         } catch {
-            print("error serializing JSON: \(error)")
+            print("\(#function): error serializing JSON: \(error)")
         }
+        
     }
     
-    public func openSocket(request: URLRequest, delegate: StompClientDelegate) {
+    public func openSocket(request: URLRequest, delegate: StompClientDelegate, connectionHeaders: [String: String]? = nil) {
+        self.connectionHeaders = connectionHeaders
         self.delegate = delegate
         self.urlRequest = request
-        // Opening the socket
-        openSocket()
-    }
-    
-    public func openSocket(request: URLRequest, delegate: StompClientDelegate, connectionHeaders: [String: String]?) {
-        self.connectionHeaders = connectionHeaders
-        openSocket(request: request, delegate: delegate)
-        self.connection = true
+        
+        self.openSocket()
+        
     }
     
     private func openSocket() {
@@ -141,7 +138,7 @@ public class StompClient: NSObject, WebSocketDelegate {
     
   
    
-    private func sendFrame(command: String?, header: [String: String]?, body: AnyObject?) {
+    private func sendFrame(command: String?, header: [String: String]?, body: String?) {
         if socket?.isConnected == true {
             var frameString = ""
             if command != nil {
@@ -157,11 +154,9 @@ public class StompClient: NSObject, WebSocketDelegate {
                 }
             }
             
-            if let body = body as? String {
+            if let body = body {
                 frameString += "\n"
                 frameString += body
-            } else if let _ = body as? NSData {
-                
             }
             
             if body == nil {
@@ -192,23 +187,11 @@ public class StompClient: NSObject, WebSocketDelegate {
         return ""
     }
     
-    private func dictForJSONString(jsonStr: String?) -> AnyObject? {
-        if let jsonStr = jsonStr {
-            do {
-                if let data = jsonStr.data(using: String.Encoding.utf8) {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                    return json as AnyObject
-                }
-            } catch {
-                print("error serializing JSON: \(error)")
-            }
-        }
-        return nil
-    }
     
     private func receiveFrame(command: String, headers: [String: String], body: String?) {
         if command == StompCommands.responseFrameConnected {
             // Connected
+            self.status = .connected
             if let sessId = headers[StompCommands.responseHeaderSession] {
                 sessionId = sessId
             }
@@ -222,7 +205,7 @@ public class StompClient: NSObject, WebSocketDelegate {
             // Response
             if let delegate = delegate {
                 DispatchQueue.main.async(execute: {
-                    delegate.stompClient(client: self, didReceiveMessageWithJSONBody: self.dictForJSONString(jsonStr: body), withHeader: headers, withDestination: self.destinationFromHeader(header: headers))
+                    delegate.stompClient(client: self, didReceiveMessageWithJSONBody: body, withHeader: headers, withDestination: self.destinationFromHeader(header: headers))
                 })
             }
         } else if command == StompCommands.responseFrameReceipt {   //
@@ -275,25 +258,14 @@ public class StompClient: NSObject, WebSocketDelegate {
         if headersToSend[StompCommands.commandHeaderContentType] == nil {
             headersToSend[StompCommands.commandHeaderContentType] = "text/plain"
         }
-        sendFrame(command: StompCommands.commandSend, header: headersToSend, body: message as AnyObject)
-    }
-    
-    /*
-     Main Connection Check Method
-     */
-    public func isConnected() -> Bool{
-        return connection
+        sendFrame(command: StompCommands.commandSend, header: headersToSend, body: message)
     }
     
     /*
      Main Subscribe Method with topic name
      */
-    public func subscribe(destination: String) {
-        connection = true
-        subcribe(destination: destination, ackMode: .autoMode)
-    }
-    
-    public func subcribe(destination: String, ackMode: StompAckMode) {
+    public func subcribe(destination: String, ackMode: StompAckMode = .autoMode) {
+        self.status = .subcribed
         var ack = ""
         switch ackMode {
         case StompAckMode.clientMode:
@@ -309,6 +281,7 @@ public class StompClient: NSObject, WebSocketDelegate {
     }
     
     public func subcribe(destination: String, withHeader header: [String: String]) {
+        self.status = .subcribed
         var headerToSend = header
         headerToSend[StompCommands.commandHeaderDestination] = destination
         if headerToSend[StompCommands.commandHeaderDestinationId] == nil {
@@ -322,7 +295,7 @@ public class StompClient: NSObject, WebSocketDelegate {
      Main Unsubscribe Method with topic name
      */
     public func unsubscribe(destination: String) {
-        connection = false
+        self.status = .connected
         var headerToSend = [String: String]()
         headerToSend[StompCommands.commandHeaderDestinationId] = destination
         sendFrame(command: StompCommands.commandUnsubscribe, header: headerToSend, body: nil)
@@ -363,7 +336,7 @@ public class StompClient: NSObject, WebSocketDelegate {
      Main Disconnection Method to close the socket
      */
     public func disconnect() {
-        connection = false
+        self.status = .disconnected
         var headerToSend = [String: String]()
         headerToSend[StompCommands.commandDisconnect] = String(Int(NSDate().timeIntervalSince1970))
         sendFrame(command: StompCommands.commandDisconnect, header: headerToSend, body: nil)
@@ -392,18 +365,8 @@ public class StompClient: NSObject, WebSocketDelegate {
     
     private func reconnectLogic(request: URLRequest, delegate: StompClientDelegate, connectionHeaders: [String: String] = [String: String]()){
         // Check if connection is alive or dead
-        if (!self.isConnected()){
-            self.checkConnectionHeader(connectionHeaders: connectionHeaders) ? self.openSocket(request: request, delegate: delegate, connectionHeaders: connectionHeaders) : self.openSocket(request: request, delegate: delegate)
-        }
-    }
-    
-    private func checkConnectionHeader(connectionHeaders: [String: String] = [String: String]()) -> Bool{
-        if (connectionHeaders.isEmpty){
-            // No connection header
-            return false
-        } else {
-            // There is a connection header
-            return true
+        if self.status == .disconnected {
+            self.openSocket(request: request, delegate: delegate, connectionHeaders: connectionHeaders)
         }
     }
     
@@ -418,7 +381,7 @@ public class StompClient: NSObject, WebSocketDelegate {
     
     public func websocketDidConnect(socket: WebSocketClient) {
         print("WebSocket is connected")
-        connect()
+        self.connect()
         DispatchQueue.main.async(execute: { [weak self] in
             self?.delegate?.stompClientDidOpenSocket(client: self)
         })
@@ -428,16 +391,13 @@ public class StompClient: NSObject, WebSocketDelegate {
     public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         
         if let err = error {
-            DispatchQueue.main.async(execute: { [weak self] in
-                self?.delegate?.serverDidSendError(client: self,
-                                                   withErrorMessage: err.localizedDescription,
-                                                   detailedErrorMessage: err as? String)
-            })
-        } else {
-            DispatchQueue.main.async(execute: { [weak self] in
-                self?.delegate?.stompClientDidDisconnect(client: self)
-            })
+            self.status = .disconnected
+            print(err)
         }
+        
+        DispatchQueue.main.async(execute: { [weak self] in
+            self?.delegate?.stompClientDidDisconnect(client: self)
+        })
     }
     
     public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
@@ -482,5 +442,13 @@ public class StompClient: NSObject, WebSocketDelegate {
             
             receiveFrame(command: command, headers: headers, body: body)
         }
+    }
+}
+extension StompClient {
+    public enum ClientStatus {
+        case disconnected
+        case connectedSocket //connected to the server socket
+        case connected //server accept connect command
+        case subcribed //subcribe to a source
     }
 }
