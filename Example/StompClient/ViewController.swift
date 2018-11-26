@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     let client = StompClient()
     
-    let header = ["Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdSIsImF1dGgiOiJST0xFX1VTRVIiLCJleHAiOjE1NDI4NzI3MTZ9.3-fy4nV0USANUoP3dBn1EAhQ1snqWiTkfVGbSh6zqYU4X5WabmRewaP_-SUqO2CcS2PbXe9egS81-FVR5gY-Rw",
+    let header = ["Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjIiLCJhdXRoIjoiUk9MRV9VU0VSIiwiZXhwIjoyNzQ2MzIxNjczN30.8tUlxdK4W35pQLG30D_sg10lzMYMIXLd3qYCKMODLIkAnLrPsRu6CjvahoH9j2IWrFPQMcNqBewF0NEAhJzQ-w",
                   "accept-version": "1.1"
                   ]
     
@@ -37,9 +37,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: StompClientDelegate {
-    func stompClient(client: StompClient!, didReceiveMessageWithJSONBody jsonBody: String?, withHeader header: [String : String]?, withDestination destination: String) {
-        print(jsonBody)
-    }
     
     func stompClientDidOpenSocket(client: StompClient!) {
         print()
@@ -52,7 +49,10 @@ extension ViewController: StompClientDelegate {
     
     func stompClientDidConnect(client: StompClient!) {
         print()
-        client.subcribe(destination: "/user/mu/topic/public", withHeader: header)
+        client.subcribe(destination: "/user/122/topic/public", withHeader: header) { jsonString, header in
+            print(jsonString)
+            
+        }
 //        client.subcribe(destination: "/topic/public/user", withHeader: header)
     }
     

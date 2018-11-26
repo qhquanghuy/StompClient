@@ -47,11 +47,19 @@ public enum StompAckMode {
     case clientMode
 }
 
+private func decodeJSONStringResponse<T: Decodable>(jsonString: String) -> T? {
+    let decoder = JSONDecoder()
+    do {
+        return try jsonString.data(using: .utf8).map { try decoder.decode(T.self, from: $0) }
+    } catch {
+        print("JSON Decoding error: \(error)")
+    }
+    return nil
+}
+
 // Fundamental Protocols
 public protocol StompClientDelegate {
     func stompClientDidOpenSocket(client: StompClient!)
-    func stompClient(client: StompClient!, didReceiveMessageWithJSONBody jsonBody: String?, withHeader header:[String:String]?, withDestination destination: String)
-    
     func stompClientDidDisconnect(client: StompClient!)
     func stompClientDidConnect(client: StompClient!)
     func serverDidSendReceipt(client: StompClient!, withReceiptId receiptId: String)
@@ -61,6 +69,8 @@ public protocol StompClientDelegate {
 
 public class StompClient: NSObject, WebSocketDelegate {
     
+    public typealias ResponseHandler = (String?, [String: String]) -> ()
+    public typealias CodableResponseHandler<T: Decodable> = (T, [String: String]) -> ()
     
     var socket: WebSocket?
     var sessionId: String?
@@ -70,8 +80,9 @@ public class StompClient: NSObject, WebSocketDelegate {
     public private(set) var status: ClientStatus = .disconnected
     public var certificateCheckEnabled = true
     private var urlRequest: URLRequest?
+    private var handlers: [String: ResponseHandler] = [:]
     
-    public func send<T: Codable>(data: T, to destination: String) {
+    public func send<T: Encodable>(data: T, to destination: String) {
         let encoder = JSONEncoder()
         do {
             let bytes = try encoder.encode(data)
@@ -121,6 +132,8 @@ public class StompClient: NSObject, WebSocketDelegate {
                 }
             })
         }
+        
+        self.handlers.removeAll()
     }
     
     /*
@@ -203,11 +216,9 @@ public class StompClient: NSObject, WebSocketDelegate {
             }
         } else if command == StompCommands.responseFrameMessage {   // Message comes to this part
             // Response
-            if let delegate = delegate {
-                DispatchQueue.main.async(execute: {
-                    delegate.stompClient(client: self, didReceiveMessageWithJSONBody: body, withHeader: headers, withDestination: self.destinationFromHeader(header: headers))
-                })
-            }
+            let destination = self.destinationFromHeader(header: headers)
+            let handler = self.handlers[destination]
+            handler?(body, headers)
         } else if command == StompCommands.responseFrameReceipt {   //
             // Receipt
             if let delegate = delegate {
@@ -264,7 +275,16 @@ public class StompClient: NSObject, WebSocketDelegate {
     /*
      Main Subscribe Method with topic name
      */
-    public func subcribe(destination: String, ackMode: StompAckMode = .autoMode) {
+    
+    private func addHandler(destination: String, handler: @escaping ResponseHandler) {
+        self.handlers[destination] = handler
+    }
+    
+    private func _subcribe(destination: String,
+                           ackMode: StompAckMode = .autoMode,
+                           completion: () -> ()) {
+        precondition(!destination.isEmpty, "cannot subcribe empty destination")
+        
         self.status = .subcribed
         var ack = ""
         switch ackMode {
@@ -277,17 +297,79 @@ public class StompClient: NSObject, WebSocketDelegate {
         if destination != "" {
             headers = [StompCommands.commandHeaderDestination: destination, StompCommands.commandHeaderAck: ack, StompCommands.commandHeaderDestinationId: destination]
         }
+        
+        completion()
+        
         self.sendFrame(command: StompCommands.commandSubscribe, header: headers, body: nil)
     }
     
-    public func subcribe(destination: String, withHeader header: [String: String]) {
+    
+    
+    private func _subcribe(destination: String,
+                         withHeader header: [String: String],
+                         completion: () -> ()) {
+        
+        precondition(!destination.isEmpty, "cannot subcribe empty destination")
+        
         self.status = .subcribed
         var headerToSend = header
         headerToSend[StompCommands.commandHeaderDestination] = destination
         if headerToSend[StompCommands.commandHeaderDestinationId] == nil {
             headerToSend[StompCommands.commandHeaderDestinationId] = "sub-\(destination)"
         }
+        
+        completion()
         sendFrame(command: StompCommands.commandSubscribe, header: headerToSend, body: nil)
+    }
+    
+    public func subcribe(destination: String,
+                         ackMode: StompAckMode = .autoMode,
+                         with handler: @escaping ResponseHandler) {
+        
+        _subcribe(destination: destination, ackMode: ackMode) {
+            self.addHandler(destination: destination, handler: handler)
+        }
+    }
+    
+    public func subcribe(destination: String,
+                         withHeader header: [String: String],
+                         with handler: @escaping ResponseHandler) {
+        
+        _subcribe(destination: destination, withHeader: header) {
+            self.addHandler(destination: destination, handler: handler)
+        }
+    }
+    
+    
+    public func subcribeDecodable<T: Decodable>(destination: String,
+                                                ackMode: StompAckMode = .autoMode,
+                                                with handler: @escaping CodableResponseHandler<T>) {
+        
+        _subcribe(destination: destination, ackMode: ackMode) {
+            self.addHandler(destination: destination) { jsonString, header in
+                
+                guard let json = jsonString, let data: T = decodeJSONStringResponse(jsonString: json)
+                    else { return }
+                
+                handler(data, header)
+                
+            }
+        }
+    }
+    
+    public func subcribeDecodable<T: Decodable>(destination: String,
+                                                withHeader header: [String: String],
+                                                with handler: @escaping CodableResponseHandler<T>) {
+        
+        _subcribe(destination: destination, withHeader: header) {
+            self.addHandler(destination: destination) { jsonString, header in
+                guard let json = jsonString, let data: T = decodeJSONStringResponse(jsonString: json)
+                    else { return }
+                
+                handler(data, header)
+            }
+        }
+        
     }
     
  
@@ -298,6 +380,7 @@ public class StompClient: NSObject, WebSocketDelegate {
         self.status = .connected
         var headerToSend = [String: String]()
         headerToSend[StompCommands.commandHeaderDestinationId] = destination
+        self.handlers[destination] = nil
         sendFrame(command: StompCommands.commandUnsubscribe, header: headerToSend, body: nil)
     }
     
